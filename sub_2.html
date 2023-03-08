@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="css/sub_common.css">
+    <link rel="stylesheet" href="css/sub_2_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/sub_2_script.js"></script>
+    <script>
+        function search() {
+            var searchname = $("#name").val();
+            $("table tbody tr").filter(function() {
+                $(this).toggle($(this).text().indexOf(searchname) > -1);
+            })
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sidemenu">
+            <ul class="gnb">
+                <li><a href=""><img src="img/ico_setting.png" alt="환경설정"></a></li>
+                <li class="toggle1"><span>기초정보관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub" style="display: block;">
+                        <li><a href="sub_1.html">신청자 및 농지정보관리</a></li>
+                        <li><a href="sub_2.html" class="active">지원물품관리</a></li>
+                        <li><a href="sub_3_1.html">소속조합별 지역조합관리</a></li>
+                        <li><a href="sub_3_2.html">공급조합별 지역조합관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle2"><span>신청관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_4.html">신청서 출력</a></li>
+                        <li><a href="sub_5.html">신청관리 및 검증</a></li>
+                        <li><a href="sub_6.html">신청자료입력</a></li>
+                        <li><a href="sub_7.html">신청예산관리</a></li>
+                        <li><a href="sub_8_1.html">순위별 선정결과관리</a></li>
+                        <li><a href="sub_8_2.html">읍면동별 선정결과관리</a></li>
+                        <li><a href="sub_9_1.html">소속농협별 주문정보관리</a></li>
+                        <li><a href="sub_9_2.html">공급농협별 주문정보관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle3"><span>시스템관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_10.html">사용자정보관리</a></li>
+                        <li><a href="sub_11.html">공지사항관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>상토지원관리시스템</h1>
+                <p class="text"><span class="username">홍길동</span>님 반갑습니다</p>
+                <div class="topmenu">
+                    <ul class="clearfix">
+                        <li><a href="myinfo.html"><img src="img/ico_mypage.png" alt="내정보">내정보</a></li>
+                        <li><a href=""><img src="img/ico_logout.png" alt="로그아웃">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <p class="text1">기초정보 > <span>지원물품관리</span></p>
+                <form>
+                    <ul class="clearfix button">
+                        <li>
+                            <input type="file" name="file" id="file" style="display:none;">
+                            <label for="file">
+                                <img src="img/ico_exel.png" alt="Excel 업로드">Excel 업로드
+                            </label>
+                        </li>
+                        <li><button>추가</button></li>
+                    </ul>
+                    <div class="search">
+                        <span style="font-weight:bold;">년도</span>
+                        <select name="year" id="year" style="margin-right:40px;">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">업체명</span>
+                        <input type="text" id="name">
+                        <span style="font-weight:bold;">상품명</span>
+                        <input type="text" id="town">
+                        <button class="searchbtn" onclick="search();" type="button">조회</button>
+                    </div>
+                    <table class="paginated">
+                        <thead>
+                            <tr>
+                                <th class="sn" style="width:5%;">NO</th>
+                                <th class="num" style="width:10%;">업체코드</th>
+                                <th class="ag" style="width:10%;">업체명</th>
+                                <th class="inout" style="width:10%;">상품명</th>
+                                <th class="app" style="width:10%;">제형</th>
+                                <th class="bd" style="width:10%">품목구분</th>
+                                <th class="res" style="width:10%;">규격</th>
+                                <th class="detail" style="width:10%">농가매출가격</th>
+                                <th class="detail" style="width:10%">상품코드</th>
+                                <th class="detail" style="width:5%">비고</th>
+                                <th class="detail" style="width:5%">수정</th>
+                                <th class="detail" style="width:5%">삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">업체코드</td>
+                                <td class="val2">업체명</td>
+                                <td class="val3">상품명</td>
+                                <td class="val4">준중량(친환경)</td>
+                                <td class="val5">수도용</td>
+                                <td class="val6">규격</td>
+                                <td class="val7">농가매출가격</td>
+                                <td class="val8">상품코드</td>
+                                <td class="val9">비고</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="page"></ul>
+
+                </form>
+
+            </div>
+
+        </div>
+        <div class="pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="updatecon" style="font-size:30px; width:100%; position:relative; margin-top: 17px; margin-bottom:50px;"><span style="font-weight:bold; width:100%;">추가 / 수정</span>
+                    <div id="closebtn" class="closebtn" style="cursor:pointer;"></div>
+                </div>
+                <div class="updatecon"><span>업체코드</span><input type="text" class="val1up"></div>
+                <div class="updatecon"><span>업체명</span><input type="text" class="val2up"></div>
+                <div class="updatecon"><span>상품명</span><input type="text" class="val3up"></div>
+                <div class="updatecon"><span>제형</span>
+                    <select name="val4up" id="val4up">
+                        <option value="val4up_1">초경량</option>
+                        <option value="val4up_2">경량</option>
+                        <option value="val4up_3">유기경량</option>
+                        <option value="val4up_4">입상</option>
+                        <option value="val4up_5">준중량</option>
+                        <option value="val4up_6">준중량(입상)</option>
+                        <option value="val4up_7">준중량(친환경)</option>
+                        <option value="val4up_8">중량</option>
+                        <option value="val4up_9">중량(분상)</option>
+                        <option value="val4up_10">중량(입상)</option>
+                        <option value="val4up_11">대형</option>
+                        <option value="val4up_12">매트</option>
+                    </select>
+                </div>
+                <div class="updatecon"><span>품목구분</span>
+                <select name="val5up" id="val5up">
+                        <option value="val5up_1">수도용</option>
+                    </select>
+                </div>
+                <div class="updatecon"><span>규격</span><input type="text" class="val6up"></div>
+                <div class="updatecon"><span>농가매출가격</span><input type="text" class="val7up"></div>
+                <div class="updatecon"><span>상품코드</span><input type="text" class="val8up"></div>
+                <div class="updatecon"><span>비고</span><input type="text" class="val9up"></div>
+                <div class="updatecon" style="text-align: right"><button type="button" class="savebtn" style="margin-right:100px;">저장</button></div>
+            </div>
+        </div>
+    </div>
+</body></html>

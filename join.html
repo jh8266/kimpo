@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" href="css/join_style.css">
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/join_script.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        function sample6_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var addr = ''; // 주소 변수
+                    var extraAddr = ''; // 참고항목 변수
+
+                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+
+                    // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+//                    if (data.userSelectedType === 'R') {
+//                        // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+//                        // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+//                        if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+//                            extraAddr += data.bname;
+//                        }
+//                        // 건물명이 있고, 공동주택일 경우 추가한다.
+//                        if (data.buildingName !== '' && data.apartment === 'Y') {
+//                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+//                        }
+//                        // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+//                        if (extraAddr !== '') {
+//                            extraAddr = ' (' + extraAddr + ')';
+//                        }
+//                        // 조합된 참고항목을 해당 필드에 넣는다.
+//                        document.getElementById("sample6_extraAddress").value = extraAddr;
+//
+//                    } else {
+//                        document.getElementById("sample6_extraAddress").value = '';
+//                    }
+
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('add').value = data.zonecode;
+                    document.getElementById("detailadd1").value = addr;
+                    // 커서를 상세주소 필드로 이동한다.
+//                    document.getElementById("sample6_detailAddress").focus();
+                }
+            }).open();
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <p class="title">사용자정보 입력</p>
+        <p class="sub1">이용약관과 개인정보처리방침에 대한 안내를 읽고 동의해주세요.</p>
+        <p class="sub2"><span style="color:red;">*</span> 표기된 항목은 필수입력 항목입니다.</p>
+        <form id="join">
+            <div class="table">
+                <table>
+                    <tbody>
+                        <tr class="nametr">
+                            <td class="bg">이름<span style="color:red;"> *</span></td>
+                            <td><input type="text" name="name" id="name"></td>
+                        </tr>
+                        <tr class="ymdtr">
+                            <td class="bg">생년월일<span style="color:red;"> *</span></td>
+                            <td>
+                                <select name="year" id="year">
+                                </select><span> 년</span>
+                                <select name="month" id="month">
+                                </select><span> 월</span>
+                                <select name="day" id="day">
+                                </select><span> 일</span>
+                            </td>
+                        </tr>
+                        <tr class="idtr">
+                            <td class="bg">아이디<span style="color:red;"> *</span></td>
+                            <td><input type="text" name="id" id="id"><input type="button" value="중복확인" class="idchk" id="idchk" style="cursor:pointer;"></td>
+                        </tr>
+                        <tr class="pwtr">
+                            <td class="bg">패스워드<span style="color:red;"> *</span></td>
+                            <td style="height:65px;"><input type="password" name="pw" id="pw">
+                                <p style="font-size:12px; margin-top:7px;">&#8251; 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합하여 설정해주세요. (8~16자)</p>
+                            </td>
+                        </tr>
+                        <tr class="pwchktr">
+                            <td class="bg">패스워드 확인<span style="color:red;"> *</span></td>
+                            <td><input type="password" name="pwchk" id="pwchk">
+                            <span class="pw_success">비밀번호가 일치합니다.</span><span class="pw_fail">비밀번호가 일치하지 않습니다.</span></td>
+                        </tr>
+                        <tr class="phonetr">
+                            <td class="bg">휴대폰 번호<span style="color:red;"> *</span></td>
+                            <td><input type="text" name="phone1" id="phone1" class="phone"><span>-</span><input type="text" name="phone2" id="phone2" class="phone"><span>-</span><input type="text" name="phone3" id="phone3" class="phone"></td>
+                        </tr>
+                        <tr class="mailtr">
+                            <td class="bg">이메일<span style="color:red;"> *</span></td>
+                            <td><input type="text" name="mail1" id="mail1" style="margin-right:3px;"><span style="margin-right:3px;">@</span><input type="text" name="maeil2" id="mail2">
+                                <select name="email" id="email" style="width:130px;">
+                                    <option value="">직접입력</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                </select>
+                                <input type="button" value="중복확인" class="mchk" id="mchk" style="cursor:pointer;">
+                            </td>
+                        </tr>
+                        <tr class="addtr">
+                            <td class="bg">주소</td>
+                            <td>
+                                <input type="text" name="add" id="add" style="width:120px">
+                                <input type="button" value="우편번호" class="addnum" style="margin-top:10px; cursor:pointer;" onclick="sample6_execDaumPostcode()"><br>
+                                <input type="text" name="detailadd1" id="detailadd1" style="margin-left:20px; margin-top:10px; margin-right:5px; width:300px;">
+                                <input type="text" name="detailadd2" id="detailadd2" style="width:300px; margin-bottom:10px;" placeholder="상세주소를 입력해주세요.">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="submitbox">
+                <button class="submit" id="submit" style="cursor:pointer;">
+                    사용자등록
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

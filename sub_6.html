@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="css/sub_common.css">
+    <link rel="stylesheet" href="css/sub_6_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/sub_6_script.js"></script>
+    <script>
+        function search() {
+            var searchname = $("#name").val();
+            $("table tbody tr").filter(function() {
+                $(this).toggle($(this).text().indexOf(searchname) > -1);
+            })
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sidemenu">
+            <ul class="gnb">
+                <li><a href=""><img src="img/ico_setting.png" alt="환경설정"></a></li>
+                <li class="toggle1"><span>기초정보관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_1.html">신청자 및 농지정보관리</a></li>
+                        <li><a href="sub_2.html">지원물품관리</a></li>
+                        <li><a href="sub_3_1.html">소속조합별 지역조합관리</a></li>
+                        <li><a href="sub_3_2.html">공급조합별 지역조합관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle2"><span>신청관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub" style="display:block;">
+                        <li><a href="sub_4.html">신청서 출력</a></li>
+                        <li><a href="sub_5.html">신청관리 및 검증</a></li>
+                        <li><a href="sub_6.html" class="active">신청자료입력</a></li>
+                        <li><a href="sub_7.html">신청예산관리</a></li>
+                        <li><a href="sub_8_1.html">순위별 선정결과관리</a></li>
+                        <li><a href="sub_8_2.html">읍면동별 선정결과관리</a></li>
+                        <li><a href="sub_9_1.html">소속농협별 주문정보관리</a></li>
+                        <li><a href="sub_9_2.html">공급농협별 주문정보관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle3"><span>시스템관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_10.html">사용자정보관리</a></li>
+                        <li><a href="sub_11.html">공지사항관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>상토지원관리시스템</h1>
+                <p class="text"><span class="username">홍길동</span>님 반갑습니다</p>
+                <div class="topmenu">
+                    <ul class="clearfix">
+                        <li><a href="myinfo.html"><img src="img/ico_mypage.png" alt="내정보">내정보</a></li>
+                        <li><a href=""><img src="img/ico_logout.png" alt="로그아웃">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="text1">신청관리 > <span>신청자료입력</span></p>
+                <form>
+                    <div class="search">
+                        <span style="font-weight:bold;">년도</span>
+                        <select name="year" id="year" style="margin-right:40px;">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">신청인 관할기관</span>
+                        <select name="bdyear" id="bdyear" style="margin-right:40px;">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">신청인명</span>
+                        <input type="text" id="town">
+                        <button class="searchbtn" onclick="search();" type="button">조회</button>
+                    </div>
+                    <table class="paginated">
+                        <thead>
+                            <tr>
+                                <th class="sn" style="width:9%;">NO</th>
+                                <th class="num" style="width:9%;">고유번호</th>
+                                <th class="ag" style="width:9%;">신청인<br>관할기관</th>
+                                <th class="ag" style="width:9%;">신청인<br>관내/관외</th>
+                                <th class="inout" style="width:9%;">신청인명</th>
+                                <th class="app" style="width:9%;">신청인<br>생년월일</th>
+                                <th class="bd" style="width:9%">신청인<br>거주마을명</th>
+                                <th class="res" style="width:9%;">신청인<br>연락처</th>
+                                <th class="" style="width:9%">자격검증</th>
+                                <th class="detail" style="width:9%">상세보기</th>
+                                <th class="detail" style="width:9%">정보입력</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                                <td class="infobtn"><button type="button">정보입력</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                                <td class="infobtn"><button type="button">정보입력</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                                <td class="infobtn"><button type="button">정보입력</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                                <td class="infobtn"><button type="button">정보입력</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                                <td class="infobtn"><button type="button">정보입력</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                                <td class="infobtn"><button type="button">정보입력</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="page"></ul>
+                </form>
+            </div>
+        </div>
+        <div class="detailpop pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">상세보기</span>
+                    <div id="closebtn" class="closebtn" style="cursor:pointer;"></div>
+                </div>
+                <div class="detailcon" style="width:100%;"><span>고유번호</span><input type="text" class="val2de" readonly></div>
+
+                <p style="margin: 10px 0; font-size:20px; font-weight:bold;">신청자정보</p>
+                <div class="detailcon"><span>관할기관</span><input type="text" class="val2de" readonly></div>
+                <div class="detailcon"><span>관내/관외</span><input type="text" class="val3de" readonly></div>
+                <div class="detailcon"><span>신청인명</span><input type="text" class="val4de" readonly></div>
+                <div class="detailcon"><span>생년월일</span><input type="text" class="val5de" readonly></div>
+                <div class="detailcon"><span>마을명</span><input type="text" class="val6de" readonly></div>
+                <div class="detailcon"><span>지번주소</span><input type="text" class="val7de" readonly></div>
+                <div class="detailcon"><span>도로명주소</span><input type="text" class="val7de" readonly></div>
+                <div class="detailcon"><span>휴대폰번호</span><input type="text" class="val7de" readonly></div>
+                <div class="detailcon"><span>전화번호</span><input type="text" class="val7de" readonly></div>
+                <div class="table">
+                    <form>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:6%;">NO</th>
+                                    <th style="width:6%;">경영체<br>등록여부</th>
+                                    <th style="width:6%;">농지상태</th>
+                                    <th style="width:6%;">농지<br>소유자명</th>
+                                    <th style="width:6%;">농지<br>소재지<br>관할기관</th>
+                                    <th style="width:6%;">농지<br>관내/관외</th>
+                                    <th style="width:6%;">농지<br>소재지</th>
+                                    <th style="width:6%;">본번</th>
+                                    <th style="width:6%;">부번</th>
+                                    <th style="width:6%;">공부면적</th>
+                                    <th style="width:6%;">실제지목</th>
+                                    <th style="width:6%;">실경확인<br>면적</th>
+                                    <th style="width:6%;">휴경확인<br>면적</th>
+                                    <th style="width:6%;">농지면적<br>합계</th>
+                                    <th style="width:6%;">비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>NO</td>
+                                    <td>등록</td>
+                                    <td>상태</td>
+                                    <td>소유자</td>
+                                    <td>관할기관</td>
+                                    <td>관내</td>
+                                    <td>소재지</td>
+                                    <td>본번</td>
+                                    <td>부번</td>
+                                    <td>면적</td>
+                                    <td>지목</td>
+                                    <td>면적</td>
+                                    <td>면적</td>
+                                    <td>합계</td>
+                                    <td>비고</td>
+                                </tr>
+                                <tr>
+                                    <td>NO</td>
+                                    <td>등록</td>
+                                    <td>상태</td>
+                                    <td>소유자</td>
+                                    <td>관할기관</td>
+                                    <td>관내</td>
+                                    <td>소재지</td>
+                                    <td>본번</td>
+                                    <td>부번</td>
+                                    <td>면적</td>
+                                    <td>지목</td>
+                                    <td>면적</td>
+                                    <td>면적</td>
+                                    <td>합계</td>
+                                    <td>비고</td>
+                                </tr>
+                                <tr>
+                                    <td>NO</td>
+                                    <td>등록</td>
+                                    <td>상태</td>
+                                    <td>소유자</td>
+                                    <td>관할기관</td>
+                                    <td>관내</td>
+                                    <td>소재지</td>
+                                    <td>본번</td>
+                                    <td>부번</td>
+                                    <td>면적</td>
+                                    <td>지목</td>
+                                    <td>면적</td>
+                                    <td>면적</td>
+                                    <td>합계</td>
+                                    <td>비고</td>
+                                </tr>
+                                <tr>
+                                    <td>NO</td>
+                                    <td>등록</td>
+                                    <td>상태</td>
+                                    <td>소유자</td>
+                                    <td>관할기관</td>
+                                    <td>관내</td>
+                                    <td>소재지</td>
+                                    <td>본번</td>
+                                    <td>부번</td>
+                                    <td>면적</td>
+                                    <td>지목</td>
+                                    <td>면적</td>
+                                    <td>면적</td>
+                                    <td>합계</td>
+                                    <td>비고</td>
+                                </tr>
+                                <tr>
+                                    <td>NO</td>
+                                    <td>등록</td>
+                                    <td>상태</td>
+                                    <td>소유자</td>
+                                    <td>관할기관</td>
+                                    <td>관내</td>
+                                    <td>소재지</td>
+                                    <td>본번</td>
+                                    <td>부번</td>
+                                    <td>면적</td>
+                                    <td>지목</td>
+                                    <td>면적</td>
+                                    <td>면적</td>
+                                    <td>합계</td>
+                                    <td>비고</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="infopop pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">정보입력</span>
+                    <div id="closebtn" class="closebtn2" style="cursor:pointer;"></div>
+                </div>
+                <div class="table">
+                    <form>
+                        <table>
+                            <tr style="background:#f1f1f1; border-top:2px solid #039be5;">
+                                <td rowspan="2" style="width:77px;">조합선택</td>
+                                <td>소속농협</td>
+                                <td>공급농협</td>
+                            </tr>
+                            <tr>
+                                <td><select name="" id="">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select></td>
+                                <td><select name="" id="">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select></td>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr style="background:#f1f1f1;">
+                                <td rowspan="12">물품선택</td>
+                                <td rowspan="4">1순위</td>
+                                <td colspan="5">신청1</td>
+                                <td colspan="5">신청2</td>
+                                <td colspan="5">신청3</td>
+                            </tr>
+                            <tr>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                            </tr>
+                            <tr>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3" style="width:100px;"></td>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3" style="width:100px;"></td>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3" style="width:100px;"></td>
+                            </tr>
+                            <tr style="background:#f1f1f1;">
+                                <td rowspan="4">2순위</td>
+                                <td colspan="5">신청1</td>
+                                <td colspan="5">신청2</td>
+                                <td colspan="5">신청3</td>
+                            </tr>
+                            <tr>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                            </tr>
+                            <tr>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3"></td>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3"></td>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr style="background:#f1f1f1;">
+                                <td rowspan="4">3순위</td>
+                                <td colspan="5">신청1</td>
+                                <td colspan="5">신청2</td>
+                                <td colspan="5">신청3</td>
+                            </tr>
+                            <tr>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                                <td>업체명</td>
+                                <td>상품명</td>
+                                <td>제형</td>
+                                <td>규격</td>
+                                <td>단가</td>
+                            </tr>
+                            <tr>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="button">업체</button></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3"></td>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3"></td>
+                                <td colspan="2">포대수</td>
+                                <td colspan="3"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <button type="button" class="savebtn">저장</button>
+            </div>
+        </div>
+        <div class="compop pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><div id="closebtn" class="closebtn3" style="cursor:pointer;"></div>
+                </div>
+                <div class="search">
+                   <span style="font-weight:bold;">업체명</span>
+                    <input type="text" id="">
+                    <span style="font-weight:bold;">상품명</span>
+                    <input type="text" id="">
+                    <button class="searchbtn" type="button">조회</button>
+                </div>
+                <div class="table">
+                    <form>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>업체명</th>
+                                    <th>상품명</th>
+                                    <th>제형</th>
+                                    <th>종류</th>
+                                    <th>포장단위</th>
+                                    <th>농가매출가격</th>
+                                    <th>선택</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="company"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="company"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="company"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="company"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="company"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="company"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="company"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <button type="button" class="savebtn">저장</button>
+            </div>
+        </div>
+    </div>
+</body></html>

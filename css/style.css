@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: pretendard;
+}
+a{
+    text-decoration:none;
+}
+ul,li,ol{
+    list-style: none;
+}
+
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.login-form{
+    width:100%;
+    height:100vh;
+    position:relative;
+}
+
+.login-form .content1{
+    width:50%;
+    height:100%;
+    background-image: url(../img/img_login.png);
+    background-size:100% 100%;
+}
+
+.login-form .content1 .logo{
+    position:absolute;
+    top:30px;
+    left:30px;
+    height:50px;
+    line-height:50px;
+    text-align: center;
+    color:#039be5;
+}
+
+.login-form .content2{
+    width:50%;
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.login-form .content2 .loginbox{
+    text-align: center;    
+}
+
+.login-form .content2 .loginbox p{
+    font-size:40px;
+    top:200px;
+    font-weight:bold;
+    color:#039be5;
+    margin-bottom:30px;
+}
+
+.login-form .content2 .loginbox form{
+    width:70%;
+    text-align: center;
+    display:inline-block;
+}
+
+.login-form .content2 .loginbox form input{
+    width:450px;
+    height:50px;
+    font-size:20px;
+    
+}
+
+.login-form .content2 .loginbox form input{
+    border:1px solid #efefef;
+    padding:0 20px;
+}
+
+.login-form .content2 .loginbox form input:nth-child(2){
+    border-top:0px solid #efefef;
+}
+
+/*
+.login-form .content2 .loginbox form .id{
+    border-radius:5px 5px 0 0;
+    background-image: url(../img/ico_mail.png);
+    background-repeat: no-repeat;
+    background-position: 20px;
+}
+
+.login-form .content2 .loginbox form .password{
+    border-radius:0 0 5px 5px;
+    background-image: url(../img/ico_pass.png);
+    background-repeat: no-repeat;
+    background-position: 25px;
+}
+*/
+
+.login-form .content2 .loginbox form .id_focus{
+    border-radius:5px 5px 0 0;
+    background-image: none;
+}
+
+.login-form .content2 .loginbox form .pw_focus{
+    border-radius:0 0 5px 5px;
+    background-image: none;
+}
+
+.login-form .content2 .loginbox form .id_blur{
+    
+    border-radius:5px 5px 0 0;
+    background-image: url(../img/ico_mail.png);
+    background-repeat: no-repeat;
+    background-position: 20px;
+}
+
+.login-form .content2 .loginbox form .pw_blur{
+    
+    
+    border-radius:0 0 5px 5px;
+    background-image: url(../img/ico_pass.png);
+    background-repeat: no-repeat;
+    background-position: 25px;
+}
+
+.login-form .content2 .loginbox form .submit-btn{
+    margin:20px 0;
+    width:490px;
+    border-radius: 5px;
+    background:#039be5;
+    border:none;
+    color:#efefef;
+    font-weight:bold;
+}
+.login-form .content2 .loginbox ul{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.login-form .content2 .loginbox ul li{
+    float:left;
+    position:relative;
+    padding: 0 10px;
+}
+
+.login-form .content2 .loginbox ul li:before{
+    content:'';
+    width:1px;
+    height:18px;
+    background:#efefef;
+    display:block;
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+}
+
+.login-form .content2 .loginbox ul li:first-child:before{
+    display:none;
+}
+
+.login-form .content2 .loginbox ul li a{
+    font-size:14px;
+    color:#111;
+}

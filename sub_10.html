@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="css/sub_common.css">
+    <link rel="stylesheet" href="css/sub_10_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/sub_10_script.js"></script>
+    <script>
+        function search() {
+            var str="";
+            var tdArr = new Array();
+            var td = $(".val4");
+            
+            var searchyear = $("#year").val();
+            var searchname = $("#name").val();
+            var searchbdyear = $("#bdyear").val();
+            var searchbdmonth = $("#bdmonth").val();
+            var searchbdday = $("#bdday").val();
+            var searchtown = $("#town").val();
+            var searchtable = $("table tbody tr");
+            
+            td.each(function(i){
+                tdArr.push(td.eq(i).text());            
+            })
+            
+            console.log(tdArr);
+            
+            if(tdArr.indexOf(searchname) != -1){
+                $("tbody tr").hide();
+                var temp = $("td:contains('"+searchname+"')");
+                $(temp).parent().show();
+                
+            } else {
+                alert("없다")
+            }
+        
+            
+            
+
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sidemenu">
+            <ul class="gnb">
+                <li><a href=""><img src="img/ico_setting.png" alt="환경설정"></a></li>
+                <li class="toggle1"><span>기초정보관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_1.html">신청자 및 농지정보관리</a></li>
+                        <li><a href="sub_2.html">지원물품관리</a></li>
+                        <li><a href="sub_3_1.html">소속조합별 지역조합관리</a></li>
+                        <li><a href="sub_3_2.html">공급조합별 지역조합관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle2"><span>신청관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_4.html">신청서 출력</a></li>
+                        <li><a href="sub_5.html">신청관리 및 검증</a></li>
+                        <li><a href="sub_6.html">신청자료입력</a></li>
+                        <li><a href="sub_7.html">신청예산관리</a></li>
+                        <li><a href="sub_8_1.html">순위별 선정결과관리</a></li>
+                        <li><a href="sub_8_2.html">읍면동별 선정결과관리</a></li>
+                        <li><a href="sub_9_1.html">소속농협별 주문정보관리</a></li>
+                        <li><a href="sub_9_2.html">공급농협별 주문정보관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle3"><span>시스템관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub" style="display: block;">
+                        <li><a href="sub_10.html" class="active">사용자정보관리</a></li>
+                        <li><a href="sub_11.html">공지사항관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>상토지원관리시스템</h1>
+                <p class="text"><span class="username">홍길동</span>님 반갑습니다</p>
+                <div class="topmenu">
+                    <ul class="clearfix">
+                        <li><a href="myinfo.html"><img src="img/ico_mypage.png" alt="내정보">내정보</a></li>
+                        <li><a href=""><img src="img/ico_logout.png" alt="로그아웃">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="text1">시스템관리 > <span>사용자정보관리</span></p>
+                <form>
+                    <div class="search">
+                        <span style="font-weight:bold;">사용자명</span>
+                        <input type="text" id="name">
+                        
+                        <button class="searchbtn" onclick="search();" type="button">조회</button>
+                    </div>
+                    <table class="paginated">
+                        <thead>
+                            <tr>
+                                <th class="sn" style="width:5%;">NO</th>
+                                <th class="num" style="width:5%;">사용자명</th>
+                                <th class="ag" style="width:10%;">아이디</th>
+                                <th class="inout" style="width:10%;">비밀번호</th>
+                                <th class="app" style="width:10%;">담당읍면동</th>
+                                <th class="bd" style="width:10%">신청인명</th>
+                                <th class="res" style="width:10%;">전화번호</th>
+                                <th class="detail" style="width:15%">휴대폰번호</th>
+                                <th class="detail" style="width:15%">이메일</th>
+                                <th class="detail" style="width:5%">수정</th>
+                                <th class="detail" style="width:5%">삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">1</td>
+                                <td class="val1">1</td>
+                                <td class="val2">고촌읍</td>
+                                <td class="val3">관내</td>
+                                <td class="val4">전준호</td>
+                                <td class="val5">1990-01-01</td>
+                                <td class="val7">전호리</td>
+                                <td class="val8">전호리</td>
+                                <td class="val9">전호리</td>
+                                <td class="changebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="page"></ul>
+                </form>
+            </div>
+        </div>
+        <div class="pop">
+            <div class="popbg"></div>
+            <form>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">수정</span>
+                    <div id="closebtn" class="closebtn" style="cursor:pointer;"></div>
+                </div>
+                <div class="detailcon"><span>아이디</span><input type="text" class="val2de"></div>
+                <div class="detailcon"><span>비밀번호</span><input type="text" class="val3de"></div>
+                <div class="detailcon"><span>비밀번호 확인</span><input type="text" class="val4de"></div>
+                <div class="detailcon"><span>담당 읍면동</span><input type="text" class="val5de"></div>
+                <div class="detailcon"><span>전화번호</span><input type="text" class="val6de"></div>
+                <div class="detailcon"><span>핸드폰번호</span><input type="text" class="val7de"></div>
+                <div class="detailcon"><span>이메일</span><input type="text" class="val8de"></div>
+                <button type="button" class="savebtn">저장</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</body></html>

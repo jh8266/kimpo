@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: pretendard;
+}
+a{
+    text-decoration:none;
+}
+ul,li,ol{
+    list-style: none;
+}
+
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.wrap {
+    width:1100px;
+    position:relative;
+    margin:0 auto;
+}
+
+.wrap > p{
+    text-align: center;
+}
+
+.wrap .title{
+    font-size:45px;
+    margin-top:100px;
+    margin-bottom:30px;
+}
+
+.wrap .sub1{
+    font-size:15px;
+    margin-bottom:60px;
+}
+
+.wrap .sub2{
+    font-size:12px;
+    position:absolute;
+    top:140px;
+    right:0;
+}
+
+.wrap .table{
+    margin:0 auto;
+    width:1100px;
+}
+
+.wrap .table table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.wrap .table table tr{
+    height:50px;
+    border-top:1px solid #dcdcdc;
+}
+
+.wrap .table table tr:first-child{
+    border-top:2px solid #039be5;
+}
+
+.wrap .table table tr:last-child{
+    border-bottom:1px solid #dcdcdc;
+}
+
+.wrap .table table .bg{
+    background-color:#f9f9f9;
+}
+
+.wrap .table table td{
+    text-indent:20px;
+}
+
+.wrap .table table td:last-child{
+    color:#999;;
+}
+
+.wrap .table table td input{
+    width:182px;
+    height:30px;
+    text-indent:10px;
+    border:1px solid #dfdfdf;
+}
+
+.wrap .table table .pwchktr .pw_success{
+    display:none;
+}
+
+.wrap .table table .pwchktr .pw_fail{
+    display:none;
+}
+
+.wrap .table table .phone,
+.wrap .table table .call{
+    width:80px;
+    margin:0 3px;
+}
+
+.wrap .table table .phone:first-child,
+.wrap .table table .call:first-child{
+    margin-left:0;
+}
+
+.wrap .table table .mail{}
+
+.wrap .table table td .idchk,
+.wrap .table table td .mchk,
+.wrap .table table td .addnum{
+    text-indent:0;
+    background-color:#8f8f8f;
+    color:#fff;
+    border:1px solid #8f8f8f;
+    padding:0 10px;
+    margin-left:10px;
+    width:80px;
+}
+
+.wrap .table table td select{
+    height:30px;
+    border:1px solid #dfdfdf;
+}
+
+.wrap .submitbox{
+    text-align: center;
+}
+
+.wrap .submitbox .submit{
+    margin-top:40px;
+    width:300px;
+    height:50px;
+    border:1px solid #039be5;
+    background-color:#039be5;
+    color:#fff;
+    font-size:16px;
+    border-radius:5px;
+}

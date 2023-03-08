@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="login-form">
+        <div class="content1">
+            <h1 class="logo">상토지원관리시스템</h1>
+        </div>
+        <div class="content2">
+            <div class="loginbox">
+                <p>LOGIN</p>
+                <form>
+                    <input type="text" name="id" id="id" value="" onFocus="this.className='id_focus'" onBlur="if ( this.value == '' ) { this.className='id_blur' }" class="id_blur" />
+                    <input type="password" name="pw" id="pw" value="" onFocus="this.className='pw_focus'" onBlur="if ( this.value == '' ) { this.className='pw_blur' }" class="pw_blur" />
+                    <br>
+                    <input type="submit" value="LOGIN" class="submit-btn">
+                </form>
+                <ul class="clearfix">
+                    <li><a href="find_ID.html">아이디 찾기</a></li>
+                    <li><a href="find_PW.html">비밀번호 찾기</a></li>
+                    <li><a href="join.html">사용자등록</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body></html>

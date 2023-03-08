@@ -1,0 +1,86 @@
+*{
+    padding:0;
+    margin:0;
+    font-family:pretendard;
+}
+
+.wrap {
+    width:470px;
+    margin:0 auto;
+    text-align: center;
+}
+
+.wrap .title{
+    font-size:45px;
+    margin-top:200px;
+    margin-bottom:30px;
+}
+
+.wrap .text1{
+    margin-bottom:60px;
+    font-size:15px;
+}
+
+.wrap #join{
+    
+}
+
+.wrap #join .table{
+    width:470px;
+    margin:0 auto;
+}
+
+.wrap #join .table table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.wrap #join .table table tr{
+    height:50px;
+    border-top:2px solid #039be9;
+}
+
+.wrap #join .table table .bg{
+    background: #f9f9f9;
+    width:150px;
+    text-align:left;
+    text-indent:20px;
+}
+
+.wrap #join .table table td:last-child{
+    text-align: left;
+}
+
+.wrap #join .table table td input{
+    margin-left:30px;
+    height:30px;
+    text-indent:20px;
+    border:1px solid #efefef;
+}
+
+.wrap #join .submitbox{
+    
+}
+
+.wrap #join .submitbox .submit{
+    background:#039be9;
+    border:1px solid #039be9;
+    height:50px;
+    margin-top:40px;
+    margin-bottom:40px;
+    font-size:16px;
+    border-radius:5px;
+    width:200px;
+    color:#fff;
+}
+
+.wrap .textbox {
+    width:350px;
+    display: inline-block;
+}
+
+.wrap .textbox .text2{
+    font-size:15px;
+    margin-bottom:10px;
+    text-align:left;
+}

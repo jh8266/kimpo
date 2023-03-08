@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" href="css/myinfo_style.css">
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/myinfo_script.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <p class="title">내정보 수정</p>
+        <form id="join">
+            <div class="table">
+                <table>
+                    <tbody>
+                        <tr class="nametr">
+                            <td class="bg">이름</td>
+                            <td><input type="text" name="name" id="name" readonly></td>
+                        </tr>
+                        <tr class="idtr">
+                            <td class="bg">아이디</td>
+                            <td><input type="text" name="id" id="id" readonly></td>
+                        </tr>
+                        <tr class="pwtr">
+                            <td class="bg">패스워드</td>
+                            <td style="height:65px;"><input type="password" name="pw" id="pw">
+                                <p style="font-size:12px; margin-top:7px;">&#8251; 영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합하여 설정해주세요. (8~16자)</p>
+                            </td>
+                        </tr>
+                        <tr class="pwchktr">
+                            <td class="bg">패스워드 확인</td>
+                            <td><input type="password" name="pwchk" id="pwchk">
+                            <span class="pw_success">비밀번호가 일치합니다.</span><span class="pw_fail">비밀번호가 일치하지 않습니다.</span></td>
+                        </tr>
+                        <tr class="phonetr">
+                            <td class="bg">휴대폰 번호</td>
+                            <td><input type="text" name="phone1" id="phone1" class="phone"><span>-</span><input type="text" name="phone2" id="phone2" class="phone"><span>-</span><input type="text" name="phone3" id="phone3" class="phone"></td>
+                        </tr>
+                        <tr class="mailtr">
+                            <td class="bg">이메일</td>
+                            <td><input type="text" name="mail1" id="mail1" style="margin-right:3px;"><span style="margin-right:3px;">@</span><input type="text" name="maeil2" id="mail2">
+                                <select name="email" id="email" style="width:130px;">
+                                    <option value="">직접입력</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="daum.net">daum.net</option>
+                                </select>
+                                <input type="button" value="중복확인" class="mchk" id="mchk" style="cursor:pointer;">
+                            </td>
+                        </tr>
+                        <tr class="nametr">
+                            <td class="bg">담당 읍면동</td>
+                            <td><input type="text" name="town" id="town"></td>
+                        </tr>
+                        <tr class="phonetr">
+                            <td class="bg">휴대폰 번호</td>
+                            <td><input type="text" name="call1" id="call1" class="call"><span>-</span><input type="text" name="call2" id="call2" class="call"><span>-</span><input type="text" name="call3" id="call3" class="call"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="submitbox">
+                <button class="submit" id="submit" style="cursor:pointer;">
+                    수정
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

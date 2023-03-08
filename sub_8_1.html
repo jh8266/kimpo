@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="css/sub_common.css">
+    <link rel="stylesheet" href="css/sub_8_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/sub_8_script.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sidemenu">
+            <ul class="gnb">
+                <li><a href=""><img src="img/ico_setting.png" alt="환경설정"></a></li>
+                <li class="toggle1"><span>기초정보관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_1.html">신청자 및 농지정보관리</a></li>
+                        <li><a href="sub_2.html">지원물품관리</a></li>
+                        <li><a href="sub_3_1.html">소속조합별 지역조합관리</a></li>
+                        <li><a href="sub_3_2.html">공급조합별 지역조합관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle2"><span>신청관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub" style="display:block;">
+                        <li><a href="sub_4.html">신청서 출력</a></li>
+                        <li><a href="sub_5.html">신청관리 및 검증</a></li>
+                        <li><a href="sub_6.html">신청자료입력</a></li>
+                        <li><a href="sub_7.html">신청예산관리</a></li>
+                        <li><a href="sub_8_1.html" class="active">순위별 선정결과관리</a></li>
+                        <li><a href="sub_8_2.html">읍면동별 선정결과관리</a></li>
+                        <li><a href="sub_9_1.html">소속농협별 주문정보관리</a></li>
+                        <li><a href="sub_9_2.html">공급농협별 주문정보관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle3"><span>시스템관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_10.html">사용자정보관리</a></li>
+                        <li><a href="sub_11.html">공지사항관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>상토지원관리시스템</h1>
+                <p class="text"><span class="username">홍길동</span>님 반갑습니다</p>
+                <div class="topmenu">
+                    <ul class="clearfix">
+                        <li><a href="myinfo.html"><img src="img/ico_mypage.png" alt="내정보">내정보</a></li>
+                        <li><a href=""><img src="img/ico_logout.png" alt="로그아웃">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="text1">신청관리 > <span>순위별 선정결과관리</span></p>
+                <form>
+                   <ul class="clearfix button">
+                        <li><button>출력</button></li>
+                    </ul>
+                    <div class="search">
+                        <span style="font-weight:bold;">년도</span>
+                        <select name="year" id="year" style="margin-right:40px;">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">순위</span>
+                        <select name="rank" style="margin-right:40px;">
+                            <option value="1st">1순위</option>
+                            <option value="2nd">2순위</option>
+                            <option value="3rd">3순위</option>
+                        </select>
+                        <button class="searchbtn" onclick="search();" type="button">조회</button>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr style="background:#dfdfdf; border-top:2px solid #039be9;">
+                                <td rowspan="3">김포시</td>
+                                <td rowspan="2">총사업비</td>
+                                <td rowspan="2">총신청면적</td>
+                                <td colspan="3">총신청포대수</td>
+                                <td colspan="3">총선정포대수</td>
+                                <td rowspan="2">총농가수</td>
+                            </tr>
+                            <tr style="background:#dfdfdf;">
+                                <td>20</td>
+                                <td>40</td>
+                                <td>매트</td>
+                                <td>20</td>
+                                <td>40</td>
+                                <td>매트</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="ranktext"><span>순위값</span>순위</p>
+                    <table>
+                        <tbody>
+                            <tr style="background:#dfdfdf; border-top:2px solid #039be9;">
+                                <td rowspan="2">성명</td>
+                                <td rowspan="2">총사업비</td>
+                                <td rowspan="2">총신청면적</td>
+                                <td colspan="3">총신청포대수</td>
+                                <td colspan="3">총선정포대수</td>
+                                <td rowspan="2">총농가수</td>
+                            </tr>
+                            <tr style="background:#dfdfdf;">
+                                <td>20</td>
+                                <td>40</td>
+                                <td>매트</td>
+                                <td>20</td>
+                                <td>40</td>
+                                <td>매트</td>
+                            </tr>
+                            <tr>
+                                <td style="width:10%"><span>순위값</span>순위 - 합계</td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                                <td style="width:10%"></td>
+                            </tr>
+                            <tr>
+                                <td>이름</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>이름</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr style="background:#dfdfdf;">
+                                <td>계</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="page"></ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</body></html>

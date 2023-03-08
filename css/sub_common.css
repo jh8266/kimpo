@@ -1,0 +1,130 @@
+*{
+    padding:0;
+    margin:0;
+    font-family:pretendard;
+}
+
+ul,li{
+    list-style: none;    
+}
+
+a{
+    text-decoration:none;
+    color:#111;
+}
+
+.clearfix:before{
+    content:'';
+    display: block;
+    clear:both;
+}
+
+.wrap{
+    width:100%;
+    height:100%;;
+    position:relative;
+}
+
+.wrap .sidemenu{
+    width:200px;
+    height:100vh;
+    background:#404040;
+    position:fixed;
+}
+
+.wrap .sidemenu .gnb > li{
+    text-indent:20px;
+    cursor:pointer;
+}
+
+.wrap .sidemenu .gnb > li:first-child{
+    background:#039be5;
+    height:70px;
+    line-height:85px;
+}
+
+.wrap .sidemenu .gnb > li span{
+    display:block;
+    height:50px;
+    line-height:50px;
+    color:#999;
+    position: relative;
+}
+
+.wrap .sidemenu .gnb > li span img{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.wrap .sidemenu .gnb > li .sub{
+    display:none;
+}
+
+.wrap .sidemenu .gnb > li .sub li{
+    background:#333;
+    text-indent:30px;
+    height:30px;
+    line-height:30px;
+}
+
+.wrap .sidemenu .gnb > li .sub li a{
+    color:#fff;
+}
+
+.wrap .sidemenu .gnb > li .sub li a.active{
+    color:#039be5;
+}
+
+.wrap .sidemenu .gnb > li .sub li a:hover{
+    color:#039be5;
+}
+
+.wrap .content{
+    margin-left:200px;
+    height:100vh;
+    background:#f9fbfc;
+    position: relative;
+}
+
+.wrap .content .header{
+    height:70px;
+    width:100%;
+    background:#fff;
+}
+
+.wrap .content .header h1{
+    color:#039be5;
+    line-height:70px;
+    margin-left:40px;
+}
+
+.wrap .content .header .text{
+    position:absolute;
+    top:25px;
+    right:300px;
+}
+
+.wrap .content .header .topmenu{
+    position:absolute;
+    top:25px;
+    right:63px;
+}
+
+.wrap .content .header .topmenu ul li{
+    float: left;
+    position:relative;
+    padding-left:18px;
+}
+
+.wrap .content .header .topmenu ul li:first-child{
+    margin-right:40px;
+}
+
+.wrap .content .header .topmenu ul li img{
+    position:absolute;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+}

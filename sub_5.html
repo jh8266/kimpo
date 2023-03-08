@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="css/sub_common.css">
+    <link rel="stylesheet" href="css/sub_5_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/sub_5_script.js"></script>
+    <script>
+        function search() {
+            var searchname = $("#name").val();
+            $("table tbody tr").filter(function() {
+                $(this).toggle($(this).text().indexOf(searchname) > -1);
+            })
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sidemenu">
+            <ul class="gnb">
+                <li><a href=""><img src="img/ico_setting.png" alt="환경설정"></a></li>
+                <li class="toggle1"><span>기초정보관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_1.html">신청자 및 농지정보관리</a></li>
+                        <li><a href="sub_2.html">지원물품관리</a></li>
+                        <li><a href="sub_3_1.html">소속조합별 지역조합관리</a></li>
+                        <li><a href="sub_3_2.html">공급조합별 지역조합관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle2"><span>신청관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub" style="display:block;">
+                        <li><a href="sub_4.html">신청서 출력</a></li>
+                        <li><a href="sub_5.html" class="active">신청관리 및 검증</a></li>
+                        <li><a href="sub_6.html">신청자료입력</a></li>
+                        <li><a href="sub_7.html">신청예산관리</a></li>
+                        <li><a href="sub_8_1.html">순위별 선정결과관리</a></li>
+                        <li><a href="sub_8_2.html">읍면동별 선정결과관리</a></li>
+                        <li><a href="sub_9_1.html">소속농협별 주문정보관리</a></li>
+                        <li><a href="sub_9_2.html">공급농협별 주문정보관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle3"><span>시스템관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_10.html">사용자정보관리</a></li>
+                        <li><a href="sub_11.html">공지사항관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>상토지원관리시스템</h1>
+                <p class="text"><span class="username">홍길동</span>님 반갑습니다</p>
+                <div class="topmenu">
+                    <ul class="clearfix">
+                        <li><a href="myinfo.html"><img src="img/ico_mypage.png" alt="내정보">내정보</a></li>
+                        <li><a href=""><img src="img/ico_logout.png" alt="로그아웃">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="text1">신청관리 > <span>신청관리 및 검증</span></p>
+                <form>
+                   <ul class="clearfix button">
+                        <li><button>자격검증</button></li>
+                        <li><button type="button" class="addbtn">추가</button></li>
+                        <li><button>확정</button></li>
+                    </ul>
+                    <div class="search">
+                        <span style="font-weight:bold;">년도</span>
+                        <select name="year" id="year" style="margin-right:40px;">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">신청인 관할기관</span>
+                        <select name="bdyear" id="bdyear" style="margin-right:40px;">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">신청인명</span>
+                        <input type="text" id="town">
+                        <button class="searchbtn" onclick="search();" type="button">조회</button>
+                    </div>
+                    <table class="paginated">
+                        <thead>
+                            <tr>
+                                <th class="sn" style="width:5%;">NO</th>
+                                <th class="num" style="width:10%;">고유번호</th>
+                                <th class="ag" style="width:10%;">신청인<br>관할기관</th>
+                                <th class="ag" style="width:10%;">신청인<br>관내/관외</th>
+                                <th class="inout" style="width:10%;">신청인명</th>
+                                <th class="app" style="width:20%;">신청인<br>생년월일</th>
+                                <th class="bd" style="width:10%">신청인<br>거주마을명</th>
+                                <th class="res" style="width:10%;">신청인<br>연락처</th>
+                                <th class="" style="width:5%">자격검증</th>
+                                <th class="update" style="width:5%">수정</th>
+                                <th class="delete" style="width:5%">삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">NO</td>
+                                <td class="val1">고유번호</td>
+                                <td class="val2">관할기관</td>
+                                <td class="val3">관내/관외</td>
+                                <td class="val4">신청인명</td>
+                                <td class="val5">생년월일</td>
+                                <td class="val6">거주마을명</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8">자격검증</td>
+                                <td class="updatebtn"><button type="button">수정</button></td>
+                                <td class="deletebtn"><button type="button">삭제</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+<!--                    <ul class="page"></ul>-->
+                </form>
+            </div>
+        </div>
+        <div class="addpop pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">추가</span>
+                    <div class="closebtn" style="cursor:pointer;"></div>
+                </div>
+                <div class="detailcon" style="width:100%;"><span>고유번호</span><input type="text" class="val2ad"></div>
+
+                <p style="margin: 10px 0; font-size:20px; font-weight:bold;">신청자정보</p>
+                <div class="detailcon"><span>관할기관</span><input type="text" class="val2ad"></div>
+                <div class="detailcon"><span>관내/관외</span><input type="text" class="val3ad"></div>
+                <div class="detailcon"><span>신청인명</span><input type="text" class="val4ad"></div>
+                <div class="detailcon"><span>생년월일</span><input type="text" class="val5ad"></div>
+                <div class="detailcon"><span>마을명</span><input type="text" class="val6ad"></div>
+                <div class="detailcon"><span>지번주소</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>도로명주소</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>휴대폰번호</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>전화번호</span><input type="text" class="val7ad"></div>
+                <div class="table">
+                    <form>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:5.8%;">NO</th>
+                                    <th style="width:5.8%;">경영체<br>등록여부</th>
+                                    <th style="width:5.8%;">농지상태</th>
+                                    <th style="width:5.8%;">농지<br>소유자명</th>
+                                    <th style="width:5.8%;">농지<br>소재지<br>관할기관</th>
+                                    <th style="width:5.8%;">농지<br>관내/관외</th>
+                                    <th style="width:5.8%;">농지<br>소재지</th>
+                                    <th style="width:5.8%;">본번</th>
+                                    <th style="width:5.8%;">부번</th>
+                                    <th style="width:5.8%;">공부면적</th>
+                                    <th style="width:5.8%;">실제지목</th>
+                                    <th style="width:5.8%;">실경확인<br>면적</th>
+                                    <th style="width:5.8%;">휴경확인<br>면적</th>
+                                    <th style="width:5.8%;">농지면적<br>합계</th>
+                                    <th style="width:5.8%;">비고</th>
+                                    <th style="width:5.8%;">수정</th>
+                                    <th style="width:5.8%;">삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>넘버링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button" class="upbtn">수정</button></td>
+                                    <td><button type="button">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>넘버링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button">수정</button></td>
+                                    <td><button type="button">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>넘버링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button">수정</button></td>
+                                    <td><button type="button">삭제</button></td>
+                                </tr>
+                                <tr style="background:#999; color:#fff;">
+                                    <td>계</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>면적계</td>
+                                    <td>지목계</td>
+                                    <td>면적계</td>
+                                    <td>면적계</td>
+                                    <td>합계</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="detailcon"><button type="button">저장</button></div>
+            </div>
+        </div>
+        <div class="addpop2 pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">추가</span>
+                    <div class="closebtn2" style="cursor:pointer;"></div>
+                </div>
+                <div class="detailcon" style="width:100%;"><span>고유번호</span><input type="text" class="val2ad"></div>
+
+                <p style="margin: 10px 0; font-size:20px; font-weight:bold;">농지정보</p>
+                <div class="detailcon"><span>경영체등록여부</span><input type="text" class="val2dad"></div>
+                <div class="detailcon"><span>농지상태</span><input type="text" class="val3ad"></div>
+                <div class="detailcon"><span>소유자명</span><input type="text" class="val4ad"></div>
+                <div class="detailcon"><span>관할기관</span><input type="text" class="val5ad"></div>
+                <div class="detailcon"><span>관내 / 관외</span><input type="text" class="val6ad"></div>
+                <div class="detailcon"><span>소재지</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>본번</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>부번</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>공부지목</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>실제지목</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>공부면적</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>실경확인면적</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>휴경확인면적</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>농지면적합계</span><input type="text" class="val7ad"></div>
+                <div class="detailcon"><span>농지 비고</span><input type="text" class="val7ad"></div>
+                <button type="button" class="savebtn">저장</button>
+            </div>
+        </div>
+        <div class="updatepop pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">수정</span>
+                    <div class="closebtn" style="cursor:pointer;"></div>
+                </div>
+                <div class="detailcon" style="width:100%;"><span>고유번호</span><input type="text" class="val2up"></div>
+
+                <p style="margin: 10px 0; font-size:20px; font-weight:bold;">신청자정보</p>
+                <div class="detailcon"><span>관할기관</span><input type="text" class="val2dup"></div>
+                <div class="detailcon"><span>관내/관외</span><input type="text" class="val3up"></div>
+                <div class="detailcon"><span>신청인명</span><input type="text" class="val4up"></div>
+                <div class="detailcon"><span>생년월일</span><input type="text" class="val5up"></div>
+                <div class="detailcon"><span>마을명</span><input type="text" class="val6up"></div>
+                <div class="detailcon"><span>지번주소</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>도로명주소</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>휴대폰번호</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>전화번호</span><input type="text" class="val7up"></div>
+                <div class="table">
+                    <form>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="width:5.8%;">NO</th>
+                                    <th style="width:5.8%;">경영체<br>등록여부</th>
+                                    <th style="width:5.8%;">농지상태</th>
+                                    <th style="width:5.8%;">농지<br>소유자명</th>
+                                    <th style="width:5.8%;">농지<br>소재지<br>관할기관</th>
+                                    <th style="width:5.8%;">농지<br>관내/관외</th>
+                                    <th style="width:5.8%;">농지<br>소재지</th>
+                                    <th style="width:5.8%;">본번</th>
+                                    <th style="width:5.8%;">부번</th>
+                                    <th style="width:5.8%;">공부면적</th>
+                                    <th style="width:5.8%;">실제지목</th>
+                                    <th style="width:5.8%;">실경확인<br>면적</th>
+                                    <th style="width:5.8%;">휴경확인<br>면적</th>
+                                    <th style="width:5.8%;">농지면적<br>합계</th>
+                                    <th style="width:5.8%;">비고</th>
+                                    <th style="width:5.8%;">수정</th>
+                                    <th style="width:5.8%;">삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>넘버링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button" class="upbtn2">수정</button></td>
+                                    <td><button type="button">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>넘버링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button">수정</button></td>
+                                    <td><button type="button">삭제</button></td>
+                                </tr>
+                                <tr>
+                                    <td>넘버링</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button type="button">수정</button></td>
+                                    <td><button type="button">삭제</button></td>
+                                </tr>
+                                <tr style="background:#999; color:#fff;">
+                                    <td>계</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>면적계</td>
+                                    <td>지목계</td>
+                                    <td>면적계</td>
+                                    <td>면적계</td>
+                                    <td>합계</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="detailcon"><button type="button">저장</button></div>
+            </div>
+        </div>
+        <div class="uppop2 pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">수정</span>
+                    <div class="closebtn3" style="cursor:pointer;"></div>
+                </div>
+                <div class="detailcon" style="width:100%;"><span>고유번호</span><input type="text" class="val2up"></div>
+
+                <p style="margin: 10px 0; font-size:20px; font-weight:bold;">농지정보</p>
+                <div class="detailcon"><span>경영체등록여부</span><input type="text" class="val2dup"></div>
+                <div class="detailcon"><span>농지상태</span><input type="text" class="val3up"></div>
+                <div class="detailcon"><span>소유자명</span><input type="text" class="val4up"></div>
+                <div class="detailcon"><span>관할기관</span><input type="text" class="val5up"></div>
+                <div class="detailcon"><span>관내 / 관외</span><input type="text" class="val6up"></div>
+                <div class="detailcon"><span>소재지</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>본번</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>부번</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>공부지목</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>실제지목</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>공부면적</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>실경확인면적</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>휴경확인면적</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>농지면적합계</span><input type="text" class="val7up"></div>
+                <div class="detailcon"><span>농지 비고</span><input type="text" class="val7up"></div>
+                <button type="button" class="savebtn">저장</button>
+            </div>
+        </div>
+    </div>
+</body></html>

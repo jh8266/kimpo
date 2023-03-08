@@ -1,0 +1,358 @@
+.wrap .content .section{
+    position:relative;
+    text-align: center;
+}
+
+.wrap .content .section .text1{
+    margin-top:20px;
+    margin-left:50px;
+    text-align:left;
+}
+
+.wrap .content .section .text1 span{
+    color:#039be5;
+}
+
+.wrap .content .section .button{
+    position:absolute;
+    right:0;
+    top:-80px;
+}
+
+.wrap .content .section ul li{
+    float:left;
+    margin-right:5px;
+}
+
+.wrap .content .section ul li:last-child{
+    margin-right:0;
+}
+
+.wrap .content .section ul li button{
+    border:2px solid #039be5;
+    background:#039be5;
+    border-radius:3px;
+    color:#fff;
+    line-height:35px;
+    padding:0 20px;
+    font-weight: bold;
+    position:relative;
+    cursor:pointer;
+}
+
+.wrap .content .section ul li label img{
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:10px;
+}
+
+.wrap .content .section ul li label{
+    border:2px solid #17864c;
+    background:#fff;
+    color:#17864c;
+    border-radius:3px;
+    line-height:35px;
+    height:35px;
+    padding:0 20px;
+    padding-left:40px;
+    padding-right:15px;
+    display:inline-block;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.wrap .content .section form{
+    display: inline-block;
+    margin-top:100px;
+    width:90%;
+    position:relative;
+}
+
+.wrap .content .section form .search{
+    text-align: left;
+    height:50px;
+    line-height:50px;
+}
+
+.wrap .content .section form .search span{
+    margin-right:10px;
+}
+
+.wrap .content .section form .search select{
+    height:40px;
+    width:80px;
+    border:1px solid #dfdfdf;
+    color:#dfdfdf;
+    text-indent:5px;
+}
+
+.wrap .content .section form .search input{
+    height:40px;
+    line-height:40px;
+    margin-right:40px;
+    border:1px solid #dfdfdf;
+    text-indent:10px;
+}
+
+.wrap .content .section form .search button{
+    height:40px;
+    width:80px;
+    background:#333;
+    color:#fff;
+    border:2px solid #333;
+    cursor:pointer;
+}
+
+.wrap .content .section form table{
+    border-collapse: collapse;
+    text-align: center;
+    margin-top:20px;
+    width:100%;
+}
+
+.wrap .content .section form table thead tr{
+    height:55px;
+    line-height:55px;
+    background:#f1f1f1;
+    border-top:2px solid #039be5;
+}
+
+.wrap .content .section form table thead th{
+    line-height:20px;
+}
+
+.wrap .content .section form table tr{
+    height:50px;
+    line-height:50px;
+    background:#fff;
+    border-top:1px solid #f1f1f1;
+}
+
+.wrap .content .section form table button{
+    background:#039be5;
+    border:1px solid #039be5;
+    color:#fff;
+    padding:10px 15px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.wrap .content .section form .page{
+    position:absolute;
+    margin-top: 50px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.wrap .content .section form .page li{
+    border:1px solid #dfdfdf;
+    margin-right:0;
+    cursor:pointer;
+}
+
+.wrap .content .section form .page li.active{
+    background:#039be5;
+}
+
+.wrap .content .section form .page li a{
+    color:#039be5;
+    padding:10px;
+    display:inline-block;
+}
+
+.wrap .content .section form .page li.active a{
+    color:#fff;
+}
+
+.wrap .pop{
+    width:100%;
+    height:100%;
+    display: none;
+}
+
+.wrap .addpop2{
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+.wrap .uppop2{
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+.wrap .pop.active{
+    display:block;
+}
+
+.wrap .addpop2.active2{
+    display:block;
+}
+
+.wrap .uppop2.active3{
+    display:block;
+}
+
+.wrap .pop .popbg{
+    top:0;
+    width:100%;
+    height:100%;
+    background:#fff;
+    position: absolute;
+    z-index: 999;
+    opacity: 0.5;
+}
+
+.wrap .pop .popup{
+    border:1px solid #999;
+    width:940px;
+    height:740px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-400px;
+    margin-left:-500px;
+    z-index: 1000;
+    background: #fff;
+}
+
+.wrap .pop .popup .detailcon{
+    width:49%;
+    display: inline-block;
+    height:40px;
+    margin-bottom:5px;
+}
+
+.wrap .pop .popup .detailcon span{
+    width:120px;
+    display: inline-block;
+}
+
+.wrap .pop .popup .detailcon input{
+    height:35px;
+    margin-left:40px;
+    text-indent:1em;
+    border:1px solid #dfdfdf;
+    width:200px;
+}
+
+.wrap .pop .popup .detailcon .closebtn,
+.wrap .pop .popup .detailcon .closebtn2,
+.wrap .pop .popup .detailcon .closebtn3{
+    width:50px;
+    height:50px;
+    position:absolute;
+    right:60px;
+    top:0;
+}
+
+.wrap .pop .popup .detailcon .closebtn:after,
+.wrap .pop .popup .detailcon .closebtn:before,
+.wrap .pop .popup .detailcon .closebtn2:after,
+.wrap .pop .popup .detailcon .closebtn2:before,
+.wrap .pop .popup .detailcon .closebtn3:after,
+.wrap .pop .popup .detailcon .closebtn3:before{
+    position:absolute;
+    left:15px;
+    content:'';
+    height:40px;
+    width:2px;
+    background-color:#000;
+}
+
+.wrap .pop .popup .detailcon .closebtn:after,
+.wrap .pop .popup .detailcon .closebtn2:after,
+.wrap .pop .popup .detailcon .closebtn3:after{
+    transform:rotate(45deg);
+}
+
+.wrap .pop .popup .detailcon .closebtn:before,
+.wrap .pop .popup .detailcon .closebtn2:before,
+.wrap .pop .popup .detailcon .closebtn3:before{
+    transform:rotate(-45deg);
+}
+
+.wrap .pop .popup .table{
+    width:827px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.wrap .pop .popup .table form{
+    width:100%;
+}
+
+.wrap .pop .popup .table form table{
+    width:100%;
+    border-collapse: collapse;
+    font-size:13px;
+}
+
+.wrap .pop .popup .table form table thead tr{
+    height:55px;
+    border-top:2px solid #039be9;
+    background:#f1f1f1;
+}
+
+.wrap .pop .popup .table form table tbody tr{
+    height:50px;
+    border-top:1px solid #f1f1f1;
+}
+
+.wrap .pop .popup .table form table input{
+    width:50px;
+    height:35px;
+    border:1px solid #dfdfdf;
+    text-indent:5px;
+}
+
+.wrap .pop .popup .table form table button{
+    background:#039be5;
+    border:1px solid #039be5;
+    border-radius:5px;
+    color:#fff;
+    padding:10px 0;
+    cursor:pointer;
+}
+
+.wrap .pop .popup .detailcon button {
+    background:#039be5;
+    border:1px solid #039be5;
+    border-radius:5px;
+    color:#fff;
+    padding:10px 15px;
+    cursor:pointer;
+    position:absolute;
+    bottom:50px;
+    right:142px;
+}
+
+.wrap .pop .popup .savebtn{
+    background:#039be5;
+    border:1px solid #039be5;
+    border-radius:5px;
+    color:#fff;
+    padding:10px 15px;
+    cursor:pointer;
+    position:absolute;
+    bottom:250px;
+    right:145px;
+}
+
+#remo{
+    padding: 40px;
+}
+
+.page-number{
+    border:1px solid #dfdfdf;
+    padding:10px;
+    background:#fff;
+    color:#039be5;
+}
+
+.page-number.active{
+    background:#039be5;
+    color:#fff;
+}

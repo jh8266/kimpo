@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상토지원관리시스템</title>
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+    <link rel="stylesheet" href="css/sub_common.css">
+    <link rel="stylesheet" href="css/sub_1_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/sub_1_script.js"></script>
+    <script>
+        function search() {
+            var str = "";
+            var tdArr = new Array();
+            var td = $(".val4");
+
+            var searchyear = $("#year").val();
+            var searchname = $("#name").val();
+            var searchbdyear = $("#bdyear").val();
+            var searchbdmonth = $("#bdmonth").val();
+            var searchbdday = $("#bdday").val();
+            var searchtown = $("#town").val();
+            var searchtable = $("table tbody tr");
+
+            td.each(function(i) {
+                tdArr.push(td.eq(i).text());
+            })
+
+            console.log(tdArr);
+
+            if (tdArr.indexOf(searchname) != -1) {
+                $("tbody tr").hide();
+                var temp = $("td:contains('" + searchname + "')");
+                $(temp).parent().show();
+                
+            } else {
+                alert("없다")
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sidemenu">
+            <ul class="gnb">
+                <li><a href=""><img src="img/ico_setting.png" alt="환경설정"></a></li>
+                <li class="toggle1"><span>기초정보관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub" style="display: block;">
+                        <li><a href="sub_1.html" class="active">신청자 및 농지정보관리</a></li>
+                        <li><a href="sub_2.html">지원물품관리</a></li>
+                        <li><a href="sub_3_1.html">소속조합별 지역조합관리</a></li>
+                        <li><a href="sub_3_2.html">공급조합별 지역조합관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle2"><span>신청관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_4.html">신청서 출력</a></li>
+                        <li><a href="sub_5.html">신청관리 및 검증</a></li>
+                        <li><a href="sub_6.html">신청자료입력</a></li>
+                        <li><a href="sub_7.html">신청예산관리</a></li>
+                        <li><a href="sub_8_1.html">순위별 선정결과관리</a></li>
+                        <li><a href="sub_8_2.html">읍면동별 선정결과관리</a></li>
+                        <li><a href="sub_9_1.html">소속농협별 주문정보관리</a></li>
+                        <li><a href="sub_9_2.html">공급농협별 주문정보관리</a></li>
+                    </ul>
+                </li>
+                <li class="toggle3"><span>시스템관리<img src="img/arrow.png" alt="화살표 이미지"></span>
+                    <ul class="sub">
+                        <li><a href="sub_10.html">사용자정보관리</a></li>
+                        <li><a href="sub_11.html">공지사항관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>상토지원관리시스템</h1>
+                <p class="text"><span class="username">홍길동</span>님 반갑습니다</p>
+                <div class="topmenu">
+                    <ul class="clearfix">
+                        <li><a href="myinfo.html"><img src="img/ico_mypage.png" alt="내정보">내정보</a></li>
+                        <li><a href=""><img src="img/ico_logout.png" alt="로그아웃">로그아웃</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="text1">기초정보 > <span>신청자 및 농지정보관리</span></p>
+                <form>
+                    <ul class="clearfix button">
+                        <li>
+                            <input type="file" name="file" id="file" style="display:none;">
+                            <label for="file">
+                                <img src="img/ico_exel.png" alt="Excel 업로드">Excel 업로드
+                            </label>
+                        </li>
+                        <li><button>확정</button></li>
+                    </ul>
+                    <div class="search">
+                        <span style="font-weight:bold;">년도</span>
+                        <select name="year" id="year" style="margin-right:40px;">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">신청자명</span>
+                        <input type="text" id="name">
+                        <span style="font-weight:bold;">생년월일</span>
+                        <select name="bdyear" id="bdyear">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">년</span>
+                        <select name="bdmonth" id="bdmonth">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold;">월</span>
+                        <select name="bdday" id="bdday">
+                            <option value=""></option>
+                        </select>
+                        <span style="font-weight:bold; margin-right:40px;">일</span>
+                        <span style="font-weight:bold;">마을명</span>
+                        <input type="text" id="town">
+                        <span style="font-weight:bold;">연락처</span>
+                        <input type="text" id="phone1">
+                        <span style="margin-right:0;">-</span>
+                        <input type="text" id="phone2">
+                        <span style="margin-right:0;">-</span>
+                        <input type="text" id="phone3">
+                        <button class="searchbtn" onclick="search();" type="button">조회</button>
+                    </div>
+                    <table class="paginated">
+                        <thead>
+                            <tr>
+                                <th class="sn" style="width:5%;">SN</th>
+                                <th class="num" style="width:5%;">고유번호</th>
+                                <th class="ag" style="width:15%;" style="line-height:20px;">신청자<br>관할기관</th>
+                                <th class="inout" style="width:10%;">신청자명</th>
+                                <th class="app" style="width:20%;" style="line-height:20px;">신청자<br>생년월일</th>
+                                <th class="bd" style="width:10%" style="line-height:20px;">신청자<br>거주마을명</th>
+                                <th class="res" style="width:15%;">신청자 주소</th>
+                                <th class="detail" style="width:10%" style="line-height:20px;">신청자<br>연락처</th>
+                                <th class="detail" style="width:10%">상세보기</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                            <tr>
+                                <td class="val0">SN</td>
+                                <td class="val1">번호</td>
+                                <td class="val2">기관명</td>
+                                <td class="val3">이름</td>
+                                <td class="val4">생년월일</td>
+                                <td class="val5">거주마을명</td>
+                                <td class="val6">주소</td>
+                                <td class="val7">연락처</td>
+                                <td class="val8" style="display:none;">탄현로 64</td>
+                                <td class="val9" style="display:none;">010-1111-1111</td>
+                                <td class="val10" style="display:none;">031-222-2222</td>
+                                <td class="val11" style="display:none;">등록</td>
+                                <td class="val12" style="display:none;">상</td>
+                                <td class="val13" style="display:none;">짱구</td>
+                                <td class="val14" style="display:none;">탄현동</td>
+                                <td class="val15" style="display:none;">관외</td>
+                                <td class="val16" style="display:none;">탄현동</td>
+                                <td class="val17" style="display:none;">본번</td>
+                                <td class="val18" style="display:none;">부번</td>
+                                <td class="val19" style="display:none;">공부지목</td>
+                                <td class="val20" style="display:none;">실제지목</td>
+                                <td class="val21" style="display:none;">공부면적</td>
+                                <td class="val22" style="display:none;">실경확인면적</td>
+                                <td class="val23" style="display:none;">휴경확인면적</td>
+                                <td class="val24" style="display:none;">농지면적합계</td>
+                                <td class="detailbtn"><button type="button">상세보기</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ul class="page"></ul>
+                    <!--
+               <div class="paging">
+                   <span id="prevbtn">prev</span>
+                   <div class="pages">
+                       <span class="active">1</span>
+                       <span>2</span>
+                       <span>3</span>
+                       <span>4</span>
+                       <span>5</span>
+                   </div>
+                   <span id="nextbtn">next</span>
+               </div>
+-->
+                </form>
+            </div>
+        </div>
+        <div class="pop">
+            <div class="popbg"></div>
+            <div class="popup" style="padding:30px 30px 30px 100px">
+                <div class="detailcon" style="font-size:30px; width:100%; position:relative; margin-top: 17px;"><span style="font-weight:bold;">상세보기</span>
+                    <div id="closebtn" class="closebtn" style="cursor:pointer;"></div>
+                </div>
+                <div class="detailcon" style="width:100%;"><span>고유번호</span><input type="text" class="val1de" readonly></div>
+
+                <p style="margin: 10px 0; font-size:20px; font-weight:bold;">신청자정보</p>
+                <div class="detailcon"><span>관할기관</span><input type="text" class="val2de" readonly></div>
+                <div class="detailcon"><span>관내/관외</span><input type="text" class="val3de" readonly></div>
+                <div class="detailcon"><span>신청자명</span><input type="text" class="val4de" readonly></div>
+                <div class="detailcon"><span>생년월일</span><input type="text" class="val5de" readonly></div>
+                <div class="detailcon"><span>마을명</span><input type="text" class="val6de" readonly></div>
+                <div class="detailcon"><span>지번주소</span><input type="text" class="val7de" readonly></div>
+                <div class="detailcon"><span>도로명주소</span><input type="text" class="val8de" readonly></div>
+                <div class="detailcon"><span>핸드폰번호</span><input type="text" class="val9de" readonly></div>
+                <div class="detailcon"><span>전화번호</span><input type="text" class="val10de" readonly></div>
+
+                <p style="margin: 10px 0; font-size:20px; font-weight:bold;">농지정보</p>
+                <div class="detailcon"><span>경영체등록여부</span><input type="text" class="val11de" readonly></div>
+                <div class="detailcon"><span>농지상태</span><input type="text" class="val12de" readonly></div>
+                <div class="detailcon"><span>수유자명</span><input type="text" class="val13de" readonly></div>
+                <div class="detailcon"><span>관할기관</span><input type="text" class="val14de" readonly></div>
+                <div class="detailcon"><span>관내/관외</span><input type="text" class="val15de" readonly></div>
+                <div class="detailcon"><span>소재지</span><input type="text" class="val16de" readonly></div>
+                <div class="detailcon"><span>본번</span><input type="text" class="val17de" readonly></div>
+                <div class="detailcon"><span>부번</span><input type="text" class="val18de" readonly></div>
+                <div class="detailcon"><span>공부지목</span><input type="text" class="val19de" readonly></div>
+                <div class="detailcon"><span>실제지목</span><input type="text" class="val20de" readonly></div>
+                <div class="detailcon"><span>공부면적</span><input type="text" class="val21de" readonly></div>
+                <div class="detailcon"><span>실경확인면적</span><input type="text" class="val22de" readonly></div>
+                <div class="detailcon"><span>휴경확인면적</span><input type="text" class="val23de" readonly></div>
+                <div class="detailcon"><span>농지면적합계</span><input type="text" class="val24de" readonly></div>
+            </div>
+        </div>
+    </div>
+</body></html>
